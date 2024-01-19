@@ -1,0 +1,98 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+
+.name-comment {
+    margin-top: 15;
+}
+
+.view-comment {
+    margin-top: 25px;
+    background-color: rgb(226, 225, 225);
+    box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.50);
+    border-radius: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.pr {
+    margin-left: 35px;
+    margin-bottom: 7px;
+}
+
+.author {
+    margin-left: 15px;
+}
+
+.desc {
+    margin-top: 5px;
+    text-align: justify;
+}
+
+.text-left {
+    text-align: center;
+}
+
+.author1 {
+    margin-top: 5px;
+}
+
+.date {
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.shr {
+    margin-top: 7px;
+}
+
+/* comment */
+
+.text-comm {
+    margin-top: 10px;
+    width: 500px;
+    height: 300px;
+    font-size: 24px;
+}
+
+.parf {
+    margin-top: 15px;
+}
+
+.pname {
+    width: 400px;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: block;
+}
+
+.ename {
+    width: 400px;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.submit input {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: gainsboro;
+    border-color: gainsboro;
+    color: #292828;
+    border-radius: 5px;
+}
+
+.mhr {
+    margin-top: 10px;
+}
+
+.h34 {
+    margin-top: 15px;
+}
+
+.ah {
+    margin-left: 5px;
+}

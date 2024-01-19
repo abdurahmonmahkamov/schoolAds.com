@@ -1,0 +1,96 @@
+{% load static %}
+<html>
+<head>
+  <title>Мой блог</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="{% static 'css/style.css'  %}" type="text/css" media="all" />
+  <link rel="stylesheet" href="{% static 'css/blog_detail.css'  %}" type="text/css" media="all" />
+
+  <link rel="shortcut icon" href="css/images/favicon.ico" />
+
+</head>
+<body>
+<div class="shell">
+  <div class="border">
+
+    <div id="navigation">
+      <ul>
+        <li><a href="/" class="active">Главная</a></li>
+        <li><a href="/admin/login/?next=/admin/" target="_blank">Админ панель</a></li>
+
+      </ul>
+    </div>
+
+    <div id="main">
+      <div id="content" class="left">
+
+        <div class="projects">
+          <h3>{{ post.title }}</h3>
+          <p align="center">
+            <img src="{{ post.image.url }}" width="70%" />
+          </p>
+          <div class="item">
+            <div class="text-left">
+              <p class="desc">{{ post.description }}</p>
+              <hr class="shr">
+              <p class="author1">Автор: {{ post.author }} </p>
+              <p class="date">Дата публикации: <em> {{ post.date }} </em> </p>
+            </div>
+            <div class="cl">&nbsp;</div>
+            <hr>
+          </div>
+
+        </div>
+      </div>
+      
+      
+
+      <hr class="mhr">
+      <div class="form-comment">
+        <h3 class = "h34">Оставить коментарий</h3>
+        <div>
+          <form action="{% url 'add_comments' post.id %}" method="post">
+            {% csrf_token %}
+
+            <div>
+              <p class="parf">Ваш коментарий:<p>
+              <textarea class="text-comm" name="text_comments"></textarea>
+            </div>
+
+            <div>
+              <label class="parf">Ваше имя: </label>
+              <input class="pname" type="text" name="name">
+
+              <label class="parf">Ваше почту: </label>
+              <input class="pemail" type="text" name="email">
+            </div>
+
+            <div class="submit"><input type="submit"></div>
+            <h3 class="name-comment">Коментарии</h3>
+          </form>
+        </div>
+      </div>
+      <div>
+
+        {% for comment in post.comments_set.all  %}
+          <div class="view-comment">
+              <h4 class="author">{{ comment.name }}:</h4>
+              <p class="pr">
+                {{ comment.text_comments }}
+              </p>
+            </div>
+            {% endfor %}
+
+      </div>
+
+      <div class="cl">&nbsp;</div>
+    </div>
+
+  </div>
+
+  <div id="footer">
+    <p class="copy right">Copyright &copy;  2022 - 2023 schoolAds.tj </p>
+  </div>
+</div>
+</body>
+</html>
